@@ -5,7 +5,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 RUN useradd --system --uid 10001 appuser
-USER appuser
+USER 10001
 ENV PORT=8080
 EXPOSE 8080
 CMD ["python", "src/server.py"]
